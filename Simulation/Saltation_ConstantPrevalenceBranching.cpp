@@ -1193,7 +1193,7 @@ int main(int argc, char **argv) {
 	
 	// DATA OUTPUT
 	if (R0_fin > 2.5) {
-		string datadir = string("/storage/bjarke/Superspread/Phylodata/kmut_emergence") + "/data_" + to_string(seed) + "_k_" + to_string(float(parameters.alpha)) + + "_kmut_" + to_string(float(parameters.k_mut)) + "/";
+		string datadir = string("/storage/user") + "/data_" + to_string(seed) + "_k_" + to_string(float(parameters.alpha)) + + "_kmut_" + to_string(float(parameters.k_mut)) + "/";
 		cout << "Data directory: " << datadir << endl;
 		boost::filesystem::create_directories(datadir);
 		cout << "Saving reproductive numbers" << endl;

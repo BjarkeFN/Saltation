@@ -761,25 +761,6 @@ mat zerodim_interpop(mat interpop) { // "Zero dimensional" interaction matrix, i
 	return interpop;
 }
 
-void print_Rspec_population_epitope(ucube R_spec, Params parameters, int pop, int epitope) {
-	cout << "Epitope: " << epitope << endl;
-	cout << "Confs: ";
-	int cutoff=100;
-	for (int config = 0; config < pow(2,parameters.L_epitope); config++ ) {
-		if (R_spec[pop,  epitope, config]>cutoff) {
-			cout << config << "\t";
-		}
-	}
-	cout << endl;
-	cout << "Membs: ";
-	for (int config = 0; config < pow(2,parameters.L_epitope); config++ ) {
-		if (R_spec[pop,  epitope, config]>cutoff) {
-			cout << R_spec[pop,  epitope, config] << "\t";
-		}
-	}
-	cout << endl;
-}
-
 simdata run_outbreak_mutatingR(Params parameters) {
 	bool strainspecific = true;
 	int Npops = parameters.popsizes.size();
